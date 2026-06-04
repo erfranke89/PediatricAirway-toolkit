@@ -291,7 +291,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     <div class="sub">RWJBarnabas Health · CMC · Version 6 · March 2026</div></div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">📄</span><h3>Official CMC Clinical Reference Document</h3><span class="chevron">▼</span>
     </div>
@@ -308,7 +308,136 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     <div><b>Don't Wait —</b> If clinically indicated, attempt intubation even if the Pediatric Airway Response Team has not yet arrived. Call PART <em>before</em> you attempt to intubate whenever time allows.</div>
   </div>
 
-  <div class="card open">
+  <div class="card">
+    <div class="card-header" onclick="toggleCard(this)">
+      <span class="ci">🔍</span><h3>Pediatric Difficult Airway Predictors</h3><span class="chevron">▼</span>
+    </div>
+    <div class="card-body">
+
+      <div class="alert amber"><span class="ai">⚠️</span><div><b>No single validated scoring tool exists for pediatric difficult airway prediction.</b> Unlike adults, LEMON has limited applicability in infants and young children. Physical exam findings, syndromic history, and acquired conditions are your primary guides. Any predictor below should prompt <b>PART activation before the first attempt.</b></div></div>
+
+      <!-- PHYSICAL EXAM PREDICTORS -->
+      <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin:14px 0 8px;letter-spacing:-.01em">📏 Physical Exam Predictors</div>
+      <table class="dt">
+        <thead><tr><th>Finding</th><th>How to Assess</th><th>Why It Matters</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Micrognathia</b><br><span class="note">Most important predictor in infants/non-cooperative children</span></td>
+            <td>Lateral profile view — assess mandibulo-maxillary discrepancy. Chin recessed behind lower lip in profile.</td>
+            <td>Reduced submandibular space → tongue cannot be displaced anteriorly → larynx cannot be visualized. Classic in Pierre Robin, Treacher Collins, Stickler.</td>
+          </tr>
+          <tr>
+            <td><b>Thyromental Distance</b><br><span class="note">Most important measurable predictor with micrognathia</span></td>
+            <td>Distance from thyroid notch to mentum (chin tip) with neck extended. Normal &gt;3 fingerbreadths / &gt;6 cm.</td>
+            <td>Short TMD = inadequate submandibular space. In infants, &lt;1.5–2 cm is concerning. Highly predictive of poor Cormack-Lehane view.</td>
+          </tr>
+          <tr>
+            <td><b>Mallampati Score</b><br><span class="note">Useful only in cooperative children ≥4 yrs</span></td>
+            <td>Seated, mouth fully open, tongue protruded. Class III/IV = uvula not visible or only base visible.</td>
+            <td>In children &gt;4 yrs, Mallampati III/IV has 43% positive predictive value for poor laryngoscopic view (Cormack-Lehane III/IV). Cannot reliably assess in infants or uncooperative children.</td>
+          </tr>
+          <tr>
+            <td><b>Mouth Opening / Inter-incisor Gap</b></td>
+            <td>3-finger test — can patient open mouth to ≥3 fingerbreadths? Normal ≥3 cm.</td>
+            <td>Limited opening from restricted TMJ (Treacher Collins, Apert) or scarring. May prevent blade insertion entirely.</td>
+          </tr>
+          <tr>
+            <td><b>Neck Extension / Mobility</b></td>
+            <td>Can child achieve full extension? Note any torticollis, surgical scars, hard collar.</td>
+            <td>Fused cervical vertebrae (Klippel-Feil), atlantoaxial instability (Down syndrome), trauma. Severely limits sniffing position.</td>
+          </tr>
+          <tr>
+            <td><b>Macroglossia</b></td>
+            <td>Tongue proportionally large relative to oral cavity. Assess tongue protrusion vs. lip line.</td>
+            <td>Physically obstructs laryngoscopy view. Classic in Beckwith-Wiedemann, Down syndrome. Often worsens with sedation.</td>
+          </tr>
+          <tr>
+            <td><b>Tonsillar / Adenoid Hypertrophy</b></td>
+            <td>Mallampati assessment, prior history of OSA, snoring, mouth breathing.</td>
+            <td>Soft tissue obstruction during bag-mask ventilation. Particularly relevant in children 3–8 yrs. Worsens with muscle relaxation.</td>
+          </tr>
+          <tr>
+            <td><b>Obesity / Short Neck</b></td>
+            <td>BMI, visual neck assessment, ear-to-sternal-notch alignment.</td>
+            <td>Ramp position critical. Reduced functional residual capacity → faster desaturation. Short neck = less submandibular compliance.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- SYNDROMIC PREDICTORS -->
+      <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin:18px 0 8px;letter-spacing:-.01em">🧬 Syndromic &amp; Congenital High-Risk Conditions</div>
+      <div class="alert blue" style="margin-bottom:10px"><span class="ai">ℹ️</span><div>Children with known syndromes below should be presumed difficult until proven otherwise. Activate PART early, plan for video laryngoscopy as primary, and have fiberoptic bronchoscopy and LMA available before any attempt.</div></div>
+      <table class="dt">
+        <thead><tr><th>Syndrome</th><th>Primary Airway Problem</th><th>Key Management Pearl</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><b>Pierre Robin Sequence</b><span class="note">~1:8,500 births</span></td>
+            <td>Triad: micrognathia + glossoptosis + cleft palate. Retrognathia pushes tongue posteriorly. Mask ventilation also difficult — small chin prevents seal.</td>
+            <td>Prone positioning may improve oxygenation pre-intubation. Video laryngoscopy first-line. Fiberoptic available. PART before any attempt. Often requires NICU-level airway management at birth.</td>
+          </tr>
+          <tr>
+            <td><b>Treacher Collins Syndrome</b><span class="note">Mandibulofacial dysostosis</span></td>
+            <td>Mandibular hypoplasia + limited mouth opening + restricted TMJ + relative macroglossia + glossoptosis + OSA. Zygomatic and maxillary bone hypoplasia compounds view.</td>
+            <td>VL with revised J-shaped stylet described in literature (240-case series). Fiberoptic standby. Expect difficult BVM — two-person technique. PART activation mandatory.</td>
+          </tr>
+          <tr>
+            <td><b>Goldenhar Syndrome</b><span class="note">Hemifacial microsomia</span></td>
+            <td>Unilateral mandibular hypoplasia → facial asymmetry complicates blade positioning and mask seal. Cervical vertebral anomalies common.</td>
+            <td>Asymmetry means blade placement must be adjusted. VL preferred. Assess neck films pre-procedure if possible — cervical anomalies in ~30%.</td>
+          </tr>
+          <tr>
+            <td><b>Down Syndrome</b><span class="note">Trisomy 21</span></td>
+            <td>Macroglossia + atlantoaxial instability + subglottic stenosis + short neck + hypotonia. Multiple compounding factors.</td>
+            <td>Avoid excessive neck flexion/extension — atlantoaxial instability risk. Use smaller ETT (subglottic stenosis — size down 0.5 mm). Macroglossia worsens with relaxation.</td>
+          </tr>
+          <tr>
+            <td><b>Apert / Crouzon / Pfeiffer Syndromes</b><span class="note">Craniosynostosis</span></td>
+            <td>Craniosynostosis + midface hypoplasia → narrowed nasal and oropharyngeal passages. Proptosis in Crouzon. Choanal stenosis common.</td>
+            <td>Nasal intubation may be impossible (choanal stenosis). Midface hypoplasia impairs mask seal. VL + fiberoptic plan. ENT on standby.</td>
+          </tr>
+          <tr>
+            <td><b>Beckwith-Wiedemann Syndrome</b></td>
+            <td>Macroglossia — tongue physically obstructs laryngeal view. Tongue may be so large it protrudes from mouth at rest.</td>
+            <td>Macroglossia worsens dramatically with muscle relaxation. Consider awake fiberoptic intubation in severe cases. Size up ETT — these children often large.</td>
+          </tr>
+          <tr>
+            <td><b>Klippel-Feil Syndrome</b></td>
+            <td>Fused cervical vertebrae → severely limited or absent neck extension. Cannot achieve sniffing position.</td>
+            <td>VL or fiberoptic intubation required — direct laryngoscopy nearly impossible without neck extension. Avoid forced extension — spinal cord injury risk.</td>
+          </tr>
+          <tr>
+            <td><b>CHARGE Syndrome</b></td>
+            <td>Choanal atresia (bilateral = immediately life-threatening in neonates) + tracheomalacia + subglottic stenosis + cranial nerve deficits.</td>
+            <td>Choanal atresia: place oral airway immediately at birth. Oral intubation only. Size down ETT for subglottic stenosis.</td>
+          </tr>
+          <tr>
+            <td><b>Stickler Syndrome</b></td>
+            <td>Micrognathia + cleft palate — frequently underlies Pierre Robin Sequence. Hypermobile joints.</td>
+            <td>Treat as Pierre Robin airway precautions. Ophthalmology involvement — high myopia/retinal detachment risk relevant to positioning.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- ACQUIRED PREDICTORS -->
+      <div style="font-size:13px;font-weight:700;color:var(--green-dark);margin:18px 0 8px;letter-spacing:-.01em">🚨 Acquired &amp; Emergency Predictors</div>
+      <table class="dt">
+        <thead><tr><th>Condition</th><th>Airway Threat</th><th>Key Consideration</th></tr></thead>
+        <tbody>
+          <tr><td><b>Epiglottitis</b></td><td>Rapidly progressive supraglottic edema — can close airway within minutes</td><td>OR with ENT if any time allows. Avoid agitating child. Inhalational induction preferred if conscious. VL + fiberoptic + surgical team standby.</td></tr>
+          <tr><td><b>Croup (Severe)</b></td><td>Subglottic edema — may prevent passage of correctly sized ETT</td><td>Size down ETT by 0.5–1 mm. Heliox while preparing. Dexamethasone + racemic epi first if time allows.</td></tr>
+          <tr><td><b>Retropharyngeal / Peritonsillar Abscess</b></td><td>Posterior pharyngeal bulge distorts anatomy, may rupture on intubation</td><td>Avoid blind nasal intubation. VL to visualize anatomy. ENT at bedside. Rupture risk = aspiration emergency.</td></tr>
+          <tr><td><b>Angioedema</b></td><td>Rapid mucosal swelling — may progress to complete obstruction</td><td>Early intubation before edema progresses. Awake fiberoptic if progressive. Epinephrine IM immediately.</td></tr>
+          <tr><td><b>Burns / Inhalation Injury</b></td><td>Progressive airway edema over hours — window for intubation closes</td><td>Intubate early if facial burns, singed nasal hairs, carbonaceous sputum, hoarseness. Do not wait for complete obstruction.</td></tr>
+          <tr><td><b>Foreign Body</b></td><td>Partial or complete obstruction — location determines approach</td><td>Avoid BVM if complete obstruction (may push FB distally). Rigid bronchoscopy often required. ENT/Pulm on standby.</td></tr>
+          <tr><td><b>Facial / Neck Trauma</b></td><td>Hemorrhage, edema, disrupted anatomy, C-spine precautions</td><td>Blood in airway = poor view. Suction before every attempt. Inline stabilization for C-spine. VL preferred. Low threshold for surgical airway.</td></tr>
+          <tr><td><b>Obesity</b></td><td>Rapid desaturation + difficult BVM + limited neck extension</td><td>Ramp position mandatory. Two-person BVM. HFNC pre-ox. Weight-based dosing (actual body weight for succinylcholine; consider lean body weight for other agents).</td></tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🔄</span><h3>Interactive Algorithm Reference</h3><span class="chevron">▼</span>
     </div>
@@ -437,7 +566,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
   </div>
   <div class="alert amber"><span class="ai">⚠️</span><div><b>Clinical judgment required.</b> Reference ranges shown. Always verify with current pharmacy resources. Max doses noted throughout.</div></div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">💉</span><h3>Premedication Agents</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="alert blue"><span class="ai">🧪</span><div><b>2024 Evidence Update:</b> Routine atropine is <em>no longer recommended</em> for all pediatric intubations. AHA/ACEP no longer define it as standard of care. Use selectively per indications. Fentanyl premedication remains appropriate when elevated ICP or hemodynamic stress is present. See Citations tab for references.</div></div>
@@ -470,7 +599,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">😴</span><h3>Induction Agents</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <table class="dt">
@@ -505,7 +634,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">⚡</span><h3>Neuromuscular Blocking Agents</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="alert red"><span class="ai">🚨</span><div><b>Succinylcholine contraindications:</b> Known/suspected muscular dystrophy · myopathy · denervation injury · hyperkalemia · rhabdomyolysis · crush injury · burns &gt;24 hrs · prolonged immobility. Risk: massive K⁺ release → cardiac arrest.</div></div>
@@ -589,7 +718,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     <div class="eq-card"><div class="eq-lbl">Estimated Age</div><div class="eq-val" id="eq-age">Enter weight</div><div class="eq-sub">Rough estimate only</div></div>
     <div class="eq-card"><div class="eq-lbl">Broselow Color</div><div class="eq-val" id="eq-broselow">Enter weight</div><div class="eq-sub">Reference tape</div></div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">📋</span><h3>Full Pediatric Sizing Reference Table</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <table class="dt">
@@ -975,7 +1104,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
   </div>
   <div id="cart-content">
     
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🔝</span>
       <h3>Top Of Cart</h3>
@@ -1000,7 +1129,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
       </table>
     </div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🔭</span>
       <h3>Drawer 1</h3>
@@ -1022,7 +1151,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
       </table>
     </div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🩺</span>
       <h3>Drawer 2</h3>
@@ -1058,7 +1187,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
       </table>
     </div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">💉</span>
       <h3>Drawer 3</h3>
@@ -1098,7 +1227,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
       </table>
     </div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🫁</span>
       <h3>Drawer 4</h3>
@@ -1142,7 +1271,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
       </table>
     </div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🫀</span>
       <h3>Drawer 5</h3>
@@ -1180,7 +1309,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
       </table>
     </div>
   </div>
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)">
       <span class="ci">🔬</span>
       <h3>Drawer 6</h3>
@@ -1221,7 +1350,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
   </div>
   <div class="alert green"><span class="ai">ℹ️</span><div>This toolkit synthesizes current pediatric airway evidence as of 2024–2025. Clinical guidelines evolve — always verify with current institutional protocols and the most recent literature.</div></div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">📋</span><h3>Institutional / Protocol Sources</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="cite-item"><div class="cite-num">1</div><div class="cite-text"><b>Ryan M. Clinical Considerations: Management of the Critical Airway in Children.</b> RWJBarnabas Health Community Medical Center. Version 6. Revised March 10, 2026.<div class="cite-journal">Institutional clinical reference document — direct source for CMC PART algorithm and activation protocol</div></div></div>
@@ -1229,7 +1358,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">🔬</span><h3>RSI / Premedication Evidence</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="cite-item"><div class="cite-num">3</div><div class="cite-text"><b>Carvalho VEL, Couto TB, Moura BMH, Schvartsman C, Reis AG. Atropine does not prevent hypoxemia and bradycardia in tracheal intubation in the pediatric emergency department: observational study.</b> <em>Rev Paul Pediatr.</em> 2024;42:e2022220. doi:10.1590/1984-0462/2024/42/2022220.<div class="cite-journal">Observational study supporting selective (not routine) atropine use in pediatric ED intubation</div></div></div>
@@ -1239,7 +1368,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">🗺️</span><h3>Pediatric Airway Guidelines</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="cite-item"><div class="cite-num">7</div><div class="cite-text"><b>Difficult Airway Society (DAS) / Association of Paediatric Anaesthetists of Great Britain and Ireland. Paediatric Difficult Airway Guidelines.</b> das.uk.com. Updated 2024.<div class="cite-journal">Three algorithms for unanticipated difficult airway in children aged 1–8 years. RCEM collaboration.</div></div></div>
@@ -1248,7 +1377,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">⚕️</span><h3>Surgical Airway / Cricothyrotomy</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="cite-item"><div class="cite-num">10</div><div class="cite-text"><b>Merck Manual Professional Edition. How to Do a Percutaneous Needle Cricothyrotomy.</b> msdmanuals.com. Updated November 2025.<div class="cite-journal">Needle cric preferred in children &lt;8–12 years due to anatomic differences; 12–14g angiocath + BVM</div></div></div>
@@ -1257,7 +1386,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">💨</span><h3>Non-Invasive Respiratory Support</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="cite-item"><div class="cite-num">13</div><div class="cite-text"><b>Shi Y, et al. Outcomes of High-Flow Nasal Cannula vs. Nasal Continuous Positive Airway Pressure in Young Children with Respiratory Distress: A Systematic Review and Meta-Analysis.</b> <em>Front Pediatr.</em> 2021. PMC8602879.<div class="cite-journal">Meta-analysis: HFNC vs CPAP in pediatric respiratory distress; CPAP more effective for reducing WOB/RR in some infant populations; no significant difference in intubation rates</div></div></div>
@@ -1266,7 +1395,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
     </div>
   </div>
 
-  <div class="card open">
+  <div class="card">
     <div class="card-header" onclick="toggleCard(this)"><span class="ci">🔭</span><h3>Blade Selection</h3><span class="chevron">▼</span></div>
     <div class="card-body">
       <div class="cite-item"><div class="cite-num">16</div><div class="cite-text"><b>Senapathi TGA, et al. Comparison between Macintosh, Miller and McCoy Laryngoscope Blade Size 2 in Paediatric Patients — A Randomised Controlled Trial.</b> <em>J Clin Diagn Res.</em> 2019. PMC6341877.<div class="cite-journal">Age 2–6 years transition phase; curved blade preferred by many providers due to adult familiarity; straight blade preferred in younger infants by pediatric airway experts</div></div></div>
@@ -1404,7 +1533,7 @@ function filterCart(){
 }
 
 // Init
-document.querySelectorAll(".card.open .card-body").forEach(b=>b.style.display="block");
+// Cards start collapsed by default — toggle opens them
 document.getElementById("cartCount").textContent="127 items total";
 </script>
 </body>
