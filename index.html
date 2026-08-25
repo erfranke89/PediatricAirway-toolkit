@@ -36,7 +36,7 @@
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font);background:var(--white);color:var(--gray-800);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:var(--font);background:var(--white);color:var(--gray-800);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased}
 
 /* ── HEADER (slate, not green) ── */
 .site-header{background:var(--slate-dark);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;box-shadow:0 2px 10px rgba(0,0,0,.28)}
@@ -237,6 +237,14 @@ body{font-family:var(--font);background:var(--white);color:var(--gray-800);font-
 hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
 .mt12{margin-top:12px}
 .mt16{margin-top:16px}
+
+/* Readable at arm's length on QR-opened phone screens. */
+.card-header h3,.abox h4,.sc h4,.blc h4,.crico-age h4{font-size:15px}
+.abox ul,.abox p,.q-band,.dt,.alert,.sc .row,.sb,.cite-item{font-size:14px}
+.fail-trigger,.fail-action,.sc .v,.bt,.t-name,.cart-count,.cite-text .cite-journal,.pill,.section-title .sub{font-size:13px}
+.note,.warn,.branch-lbl,.fail-arrow,.sn,.pdf-cap{font-size:12px}
+.main [style*="font-size:12px"],.main [style*="font-size:13px"]{font-size:14px !important}
+.weight-bar label,.weight-bar input[type=number]{font-size:15px}
 
 /* ── FOOTER ── */
 .site-footer{background:var(--slate-dark);color:rgba(255,255,255,.45);text-align:center;padding:14px 20px;font-size:11px;line-height:1.8}
