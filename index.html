@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a202c">
 <title>Pediatric Critical Airway — CMC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -48,7 +49,7 @@ body{font-family:var(--font);background:var(--white);color:var(--gray-800);font-
 .nav-wrap{background:var(--green);border-bottom:2px solid var(--green-dark);overflow-x:auto;scrollbar-width:none}
 .nav-wrap::-webkit-scrollbar{display:none}
 .nav-tabs{display:flex;min-width:max-content;padding:0 6px}
-.nav-tab{display:flex;align-items:center;gap:6px;padding:11px 16px;font-size:13px;font-weight:500;color:rgba(255,255,255,.7);cursor:pointer;border-bottom:3px solid transparent;transition:all .16s;white-space:nowrap;user-select:none}
+.nav-tab{display:flex;align-items:center;gap:6px;padding:11px 16px;min-height:44px;font-family:var(--font);font-size:13px;font-weight:500;color:rgba(255,255,255,.7);cursor:pointer;border:0;border-bottom:3px solid transparent;background:transparent;transition:all .16s;white-space:nowrap;user-select:none}
 .nav-tab:hover{color:#fff;background:rgba(255,255,255,.07)}
 .nav-tab.active{color:#fff;border-bottom-color:var(--green-light);background:rgba(255,255,255,.11)}
 
@@ -58,11 +59,17 @@ body{font-family:var(--font);background:var(--white);color:var(--gray-800);font-
 .weight-bar input[type=number]{width:78px;padding:5px 9px;border:1.5px solid var(--green-mid);border-radius:6px;font-family:var(--mono);font-size:14px;font-weight:500;color:var(--green-dark);background:#fff;outline:none;transition:border-color .15s}
 .weight-bar input[type=number]:focus{border-color:var(--green)}
 .unit-toggle{display:flex;border:1.5px solid var(--green-mid);border-radius:6px;overflow:hidden}
-.unit-btn{padding:5px 11px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--green-mid);border:none;font-family:var(--font);transition:background .14s,color .14s}
+.unit-btn{padding:8px 13px;min-width:44px;min-height:44px;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--green-mid);border:none;font-family:var(--font);transition:background .14s,color .14s}
 .unit-btn.active{background:var(--green);color:#fff}
 .age-hint{font-size:12px;color:var(--green);font-style:italic}
 .calc-badge{background:var(--green);color:#fff;font-size:11px;font-weight:600;padding:3px 9px;border-radius:4px;letter-spacing:.04em;display:none}
-.clear-btn{margin-left:auto;font-size:12px;color:var(--green-mid);cursor:pointer;background:none;border:none;font-family:var(--font);text-decoration:underline}
+.clear-btn{margin-left:auto;min-width:44px;min-height:44px;padding:8px;font-size:12px;color:var(--green-mid);cursor:pointer;background:none;border:none;font-family:var(--font);text-decoration:underline}
+.nav-tab:focus-visible,.unit-btn:focus-visible,.clear-btn:focus-visible,.card-header:focus-visible,.quick-nav select:focus-visible{outline:3px solid #f6ad55;outline-offset:2px}
+.skip-link{position:fixed;left:10px;top:-60px;z-index:999;background:#fff;color:var(--green-dark);padding:10px 14px;border-radius:6px;font-weight:700}
+.skip-link:focus{top:10px}
+.quick-nav{display:none;padding:8px 12px;background:var(--green-pale);border-bottom:1px solid var(--green-light)}
+.quick-nav label{display:block;font-size:12px;font-weight:700;color:var(--green-dark)}
+.quick-nav select{width:100%;min-height:44px;margin-top:4px;padding:8px 10px;border:1.5px solid var(--green);border-radius:8px;background:#fff;color:var(--gray-800);font:inherit}
 
 /* ── MAIN ── */
 .main{max-width:980px;margin:0 auto;padding:26px 20px 70px}
@@ -235,6 +242,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
 .site-footer{background:var(--slate-dark);color:rgba(255,255,255,.45);text-align:center;padding:14px 20px;font-size:11px;line-height:1.8}
 
 @media(max-width:600px){
+  .quick-nav{display:block}
   .two-col,.blade-grid,.crico-box,.branch-row,.fail-row{grid-template-columns:1fr}
   .fail-row{display:flex;flex-direction:column}
   .fail-trigger{border-right:none;border-bottom:2px solid rgba(0,0,0,.1)}
@@ -244,32 +252,39 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main-content">Skip to clinical content</a>
 
 <header class="site-header">
   <div>
     <span class="brand-top">RWJBarnabas Health · Community Medical Center</span>
     <span class="brand-title">Pediatric Critical Airway <span class="dot">●</span></span>
   </div>
-  <span class="hdr-badge">Peds Airway v2.0 · 2025</span>
+  <span class="hdr-badge">Peds Airway v2.0 · Reviewed Mar 2026</span>
 </header>
 
-<nav class="nav-wrap">
+<nav class="nav-wrap" aria-label="Toolkit sections">
   <div class="nav-tabs">
-    <div class="nav-tab active" data-tab="algorithm"   onclick="showTab('algorithm')">🗺️ Algorithm</div>
-    <div class="nav-tab" data-tab="dosing"      onclick="showTab('dosing')">💊 Dosing</div>
-    <div class="nav-tab" data-tab="equipment"   onclick="showTab('equipment')">🔧 Equipment</div>
-    <div class="nav-tab" data-tab="blades"      onclick="showTab('blades')">🔭 Miller vs Mac</div>
-    <div class="nav-tab" data-tab="noninvasive" onclick="showTab('noninvasive')">💨 Non-Invasive Support</div>
-    <div class="nav-tab" data-tab="surgical"    onclick="showTab('surgical')">⚕️ Surgical Airway</div>
-    <div class="nav-tab" data-tab="part"        onclick="showTab('part')">👥 PART Team</div>
-    <div class="nav-tab" data-tab="cart"        onclick="showTab('cart')">🛒 Supply Cart</div>
-    <div class="nav-tab" data-tab="citations"   onclick="showTab('citations')">📚 Citations</div>
+    <button class="nav-tab active" data-tab="algorithm" onclick="showTab('algorithm')">🗺️ Algorithm</button>
+    <button class="nav-tab" data-tab="dosing" onclick="showTab('dosing')">💊 Dosing</button>
+    <button class="nav-tab" data-tab="equipment" onclick="showTab('equipment')">🔧 Equipment</button>
+    <button class="nav-tab" data-tab="blades" onclick="showTab('blades')">🔭 Miller vs Mac</button>
+    <button class="nav-tab" data-tab="noninvasive" onclick="showTab('noninvasive')">💨 Non-Invasive Support</button>
+    <button class="nav-tab" data-tab="surgical" onclick="showTab('surgical')">⚕️ Surgical Airway</button>
+    <button class="nav-tab" data-tab="part" onclick="showTab('part')">👥 PART Team</button>
+    <button class="nav-tab" data-tab="cart" onclick="showTab('cart')">🛒 Supply Cart</button>
+    <button class="nav-tab" data-tab="citations" onclick="showTab('citations')">📚 Citations</button>
   </div>
 </nav>
+<div class="quick-nav">
+  <label for="sectionJump">Jump to a section</label>
+  <select id="sectionJump" onchange="showTab(this.value)">
+    <option value="algorithm">Algorithm</option><option value="dosing">Dosing</option><option value="equipment">Equipment</option><option value="blades">Miller vs Mac</option><option value="noninvasive">Non-Invasive Support</option><option value="surgical">Surgical Airway</option><option value="part">PART Team</option><option value="cart">Supply Cart</option><option value="citations">Citations</option>
+  </select>
+</div>
 
 <div class="weight-bar">
   <label for="wt">⚖️ Patient Weight:</label>
-  <input type="number" id="wt" min="0.5" max="200" step="0.1" placeholder="—" oninput="calcDoses()">
+  <input type="number" inputmode="decimal" id="wt" min="0.5" max="200" step="0.1" placeholder="—" oninput="calcDoses()">
   <div class="unit-toggle">
     <button class="unit-btn active" id="btnKg" onclick="setUnit('kg')">kg</button>
     <button class="unit-btn" id="btnLb" onclick="setUnit('lb')">lb</button>
@@ -279,7 +294,7 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
   <button class="clear-btn" onclick="clearW()">Clear</button>
 </div>
 
-<main class="main">
+<main class="main" id="main-content">
 
 <!-- ════════════════════════════════
      ALGORITHM
@@ -1409,17 +1424,24 @@ hr.div{border:none;border-top:1px solid var(--gray-200);margin:14px 0}
 <footer class="site-footer">
   <div><b>Physician Reference Tool — Not an Official Hospital Policy</b></div>
   <div>For clinical reference by ED physician staff at CMC · Does not represent official RWJBarnabas Health policy</div>
-  <div>Always defer to current institutional protocols and clinical judgment · ED Medical Director · CMC · Peds Airway v2.0 · 2025</div>
+  <div>Always defer to current institutional protocols and clinical judgment · ED Medical Director · CMC · Peds Airway v2.0 · Reviewed March 2026</div>
 </footer>
 
 <script>
-function showTab(t){
+function showTab(t, options={}){
+  const panel=document.getElementById("tab-"+t);
+  const tab=document.querySelector("[data-tab='"+t+"']");
+  if(!panel||!tab)return;
   document.querySelectorAll(".section-panel").forEach(p=>p.classList.remove("active"));
-  document.querySelectorAll(".nav-tab").forEach(n=>n.classList.remove("active"));
-  document.getElementById("tab-"+t).classList.add("active");
-  document.querySelector("[data-tab='"+t+"']").classList.add("active");
+  document.querySelectorAll(".nav-tab").forEach(n=>{n.classList.remove("active");n.setAttribute("aria-current","false")});
+  panel.classList.add("active");
+  tab.classList.add("active");tab.setAttribute("aria-current","page");
+  tab.scrollIntoView({behavior:options.instant?"auto":"smooth",block:"nearest",inline:"center"});
+  const jump=document.getElementById("sectionJump");if(jump)jump.value=t;
+  if(location.hash!=="#"+t)history.replaceState(null,"","#"+t);
+  if(!options.noScroll)window.scrollTo({top:0,behavior:options.instant?"auto":"smooth"});
 }
-function toggleCard(h){h.closest(".card").classList.toggle("open")}
+function toggleCard(h){const card=h.closest(".card");card.classList.toggle("open");h.setAttribute("aria-expanded",String(card.classList.contains("open")))}
 
 let unit="kg";
 function setUnit(u){
@@ -1484,7 +1506,7 @@ function calcDoses(){
   S("lora-calc",R(Math.min(w*.05,4),"mg"));
   S("epi-arrest",R(Math.min(w*.01,1),"mg IV"));
   S("epi-ana",R(Math.min(w*.01,.5),"mg IM"));
-  S("atrop-brady",Rr(Math.max(Math.min(w*.02,.5),.1),Math.min(w*.02,.5),"mg"));
+  S("atrop-brady",R(Math.max(Math.min(w*.02,.5),.1),"mg"));
   S("ns-bolus",Rr(w*10,w*20,"mL"));
   S("push-epi",Rr(w*.1,w*.2,"mL of 10 mcg/mL"));
 
@@ -1535,6 +1557,17 @@ function filterCart(){
 // Init
 // Cards start collapsed by default — toggle opens them
 document.getElementById("cartCount").textContent="127 items total";
+
+document.querySelectorAll(".nav-tab").forEach((tab,index)=>tab.setAttribute("aria-current",index===0?"page":"false"));
+document.querySelectorAll(".card-header").forEach((header,index)=>{
+  const body=header.closest(".card")?.querySelector(".card-body");if(!body)return;
+  body.id||="card-panel-"+(index+1);
+  header.setAttribute("role","button");header.setAttribute("tabindex","0");header.setAttribute("aria-controls",body.id);header.setAttribute("aria-expanded","false");
+  header.addEventListener("keydown",event=>{if(event.key==="Enter"||event.key===" "){event.preventDefault();header.click()}});
+});
+const initialTab=location.hash.slice(1);
+if(initialTab&&document.getElementById("tab-"+initialTab))showTab(initialTab,{instant:true,noScroll:true});
+window.addEventListener("hashchange",()=>{const id=location.hash.slice(1);if(document.getElementById("tab-"+id))showTab(id,{instant:true})});
 </script>
 </body>
 </html>
